@@ -169,7 +169,7 @@ function createCard(cardIndex, defaultBreedId = "mutt"){
   const taxMoney = el("div", "money warn", "$0");
   const taxSplit = el("div", "split");
   const taxPer = el("div", "", "Per puppy: $0");
-  const taxHint = el("div", "", "Config");
+  const taxHint = el("div", "", "");
   taxSplit.appendChild(taxPer);
   taxSplit.appendChild(taxHint);
   taxBox.appendChild(taxMoney);
@@ -262,7 +262,7 @@ function createCard(cardIndex, defaultBreedId = "mutt"){
 
     taxMoney.textContent = money(taxesTotal);
     taxPer.textContent = `Per puppy: ${money(taxPerPuppy)}`;
-    taxHint.textContent = `Config`;
+    taxHint.textContent = ``;
   }
 
   // Wire events
