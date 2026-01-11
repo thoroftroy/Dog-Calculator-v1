@@ -1,0 +1,283 @@
+/* =========================================
+   Simple colorful styling for the cards
+   ========================================= */
+
+:root{
+  --bg0: #0b1020;
+  --bg1: #101a33;
+  --card: rgba(255,255,255,0.08);
+  --card2: rgba(255,255,255,0.12);
+  --stroke: rgba(255,255,255,0.16);
+  --text: rgba(255,255,255,0.92);
+  --muted: rgba(255,255,255,0.70);
+
+  --good: rgba(120,255,190,0.85);
+  --warn: rgba(255,220,120,0.90);
+  --bad: rgba(255,120,120,0.85);
+
+  --accent: rgba(140,170,255,0.95);
+  --accent2: rgba(255,140,220,0.90);
+}
+
+*{ box-sizing: border-box; }
+html, body{
+  height: 100%;
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  background: radial-gradient(1200px 700px at 20% 10%, #1b2a66 0%, var(--bg0) 55%),
+              radial-gradient(900px 650px at 80% 90%, #4a1a5a 0%, var(--bg0) 55%);
+  color: var(--text);
+}
+
+header{
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(10px);
+  background: linear-gradient(to bottom, rgba(10,16,32,0.85), rgba(10,16,32,0.55));
+  border-bottom: 1px solid var(--stroke);
+}
+
+.header-inner{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.title{
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.title h1{
+  font-size: 18px;
+  margin: 0;
+  letter-spacing: 0.2px;
+}
+.title .sub{
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.add-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid var(--stroke);
+  background: linear-gradient(135deg, rgba(140,170,255,0.25), rgba(255,140,220,0.18));
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.08s ease, background 0.2s ease;
+}
+.add-btn:hover{ transform: translateY(-1px); }
+.add-btn:active{ transform: translateY(0px) scale(0.98); }
+
+.add-btn .plus{
+  width: 28px;
+  height: 28px;
+  border-radius: 9px;
+  border: 1px solid var(--stroke);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  background: rgba(255,255,255,0.10);
+}
+
+main{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 18px 16px 40px;
+}
+
+.cards{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* =========================
+   Card layout
+   ========================= */
+
+.card{
+  border: 1px solid var(--stroke);
+  background: linear-gradient(180deg, var(--card), rgba(255,255,255,0.06));
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 18px 38px rgba(0,0,0,0.25);
+}
+
+.card-header{
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border-bottom: 1px solid var(--stroke);
+  background: rgba(255,255,255,0.06);
+}
+
+.card-badge{
+  font-size: 12px;
+  color: var(--muted);
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+.badge-dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px rgba(140,170,255,0.18);
+}
+
+.card-body{
+  padding: 14px;
+  display: grid;
+  grid-template-columns: 1.35fr 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 900px){
+  .card-body{ grid-template-columns: 1fr; }
+}
+
+/* Left panel: options */
+.panel{
+  border: 1px solid var(--stroke);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.06);
+  padding: 12px;
+}
+
+.panel h3{
+  margin: 0 0 10px 0;
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: 0.2px;
+}
+
+.row{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.row:last-child{ margin-bottom: 0; }
+
+label{
+  font-size: 13px;
+  color: var(--text);
+}
+
+select, input[type="number"]{
+  background: rgba(0,0,0,0.25);
+  color: var(--text);
+  border: 1px solid var(--stroke);
+  border-radius: 10px;
+  padding: 8px 10px;
+  outline: none;
+  width: 100%;
+}
+
+.small{
+  width: 120px;
+}
+
+.checks{
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.check{
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 7px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--stroke);
+  background: rgba(255,255,255,0.06);
+}
+
+.check input{
+  width: 16px;
+  height: 16px;
+}
+
+/* Disabled state used for mutt */
+.disabled{
+  opacity: 0.45;
+  filter: grayscale(0.6);
+  pointer-events: none;
+}
+
+/* Right panels: results */
+.kpi{
+  display: grid;
+  gap: 10px;
+}
+
+.kpi-box{
+  border: 1px solid var(--stroke);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.06);
+  padding: 12px;
+}
+
+.kpi-box .kpi-title{
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.money{
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.split{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.money.good{ color: var(--good); }
+.money.warn{ color: var(--warn); }
+.money.bad{  color: var(--bad); }
+
+.footer-note{
+  margin-top: 10px;
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+/* Tiny remove button for each card*/
+.remove-btn{
+  border: 1px solid var(--stroke);
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 8px 10px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.remove-btn:hover{ background: rgba(255,255,255,0.10); }

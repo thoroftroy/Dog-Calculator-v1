@@ -1,0 +1,46 @@
+{
+  "config": {
+    "dogPoundPerDay": 100,
+    "puppyPoundPerDay": 50,
+    "taxPerPuppy": 20
+  },
+  "breeds": {
+    "mutt": {
+      "id": "mutt",
+      "name": "Mutt",
+      "isMutt": true,
+      "fixedSell": 200,
+      "groomCost": 0,
+      "trainCost": 0,
+      "sellTiers": [200, 200, 200, 200]
+    },
+    "golden": {
+      "id": "golden",
+      "name": "Golden Retriever",
+      "groomCost": 30,
+      "trainCost": 200,
+      "sellTiers": [1000, 1500, 3000, 4000]
+    },
+    "germanshepherd": {
+      "id": "germanshepherd",
+      "name": "German Shepherd",
+      "groomCost": 40,
+      "trainCost": 220,
+      "sellTiers": [1100, 1600, 3200, 4300]
+    },
+    "poodle": {
+      "id": "poodle",
+      "name": "Poodle",
+      "groomCost": 60,
+      "trainCost": 180,
+      "sellTiers": [900, 1700, 2800, 4200]
+    },
+    "husky": {
+      "id": "husky",
+      "name": "Siberian Husky",
+      "groomCost": 55,
+      "trainCost": 240,
+      "sellTiers": [1200, 1800, 3500, 4800]
+    }
+  }
+}

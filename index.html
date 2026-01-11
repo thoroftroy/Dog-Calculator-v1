@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dog Breeding Boardgame Calculator</title>
+
+  <!-- Main styles -->
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="title">
+        <h1>Dog Breeding Calculator</h1>
+        <div class="sub">Add as many calculators as you want. Each card is independent.</div>
+      </div>
+
+      <!-- Plus button (adds new cards to bottom) -->
+      <button class="add-btn" id="addCardBtn" type="button" title="Add a new calculator card">
+        <span class="plus">+</span>
+        <span>Add Card</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Cards get appended here -->
+    <div class="cards" id="cards"></div>
+  </main>
+
+  <!-- App logic (loads data.json and builds UI) -->
+  <script src="./app.js"></script>
+</body>
+</html>
